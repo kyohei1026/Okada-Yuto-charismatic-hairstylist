@@ -183,6 +183,64 @@
     @media(max-width:560px){
       .wrap{width:min(100% - 18px,1120px)}.fauxLogo{width:144px}.hqLabel{white-space:normal}.mainNav a{font-size:12px}.noticeRibbon .wrap{align-items:flex-start}.heroBlue{padding:22px 16px}.heroSubLine span{font-size:12px}.heroBottom,.grid4,.grid3,.grid2,.contactGrid{grid-template-columns:1fr}.metric{border-right:0;border-bottom:1px solid var(--line)}.metric:last-child{border-bottom:0}.section{padding:16px;border-radius:18px}.sectionTitle{margin:-16px -16px 14px;padding:15px 16px;align-items:flex-start;flex-direction:column}.sectionTitle p{text-align:left}.tabs{position:static}.event{grid-template-columns:1fr;margin-left:10px}.time{text-align:left;display:inline-block;width:max-content}.event h4{font-size:17px}.consultantCard{display:block;padding:16px}.face{margin:4px auto 12px;width:88px;height:88px}.quickBtns a,.quickBtns button{font-size:12px;padding:7px 10px}.contactInfo div{grid-template-columns:1fr}.contactCard h3,.shopCard h3{padding-right:0}.heroCopy,.serviceCard p,.event p,.shopCard li,.contactInfo,.inlinePlace{word-break:break-word}
     }
+
+    /* Mobile-first readability patch */
+    @media(max-width:700px){
+      body{line-height:1.78;background:var(--bg);font-size:15px}
+      .siteHeader{position:static}
+      .headerTop{min-height:auto;gap:8px;padding:10px 0}
+      .logoBox{width:100%;align-items:center}
+      .fauxLogo{width:132px;height:auto;flex:0 0 auto}
+      .hqLabel{font-size:11px;line-height:1.35}
+      .quickBtns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;overflow:visible}
+      .quickBtns a,.quickBtns button{width:100%;text-align:center;justify-content:center;padding:10px 8px;font-size:12px;border-radius:14px}
+      .mainNav{position:sticky;top:0;z-index:90;box-shadow:0 8px 18px rgba(20,40,90,.08)}
+      .mainNav .wrap{display:flex;overflow-x:auto;gap:0;width:100%;padding:0 8px}
+      .mainNav a{flex:0 0 auto;min-width:112px;font-size:12px;padding:11px 10px}
+      .breadcrumb{display:none}
+      .hero{padding-top:12px}
+      .heroPanel{border-radius:18px}
+      .heroBlue{padding:18px 14px;gap:14px}
+      h1{font-size:30px;letter-spacing:-.03em;line-height:1.12;margin:14px 0 8px}
+      .heroCopy{font-size:14px;line-height:1.75}
+      .heroSubLine{gap:6px}
+      .heroSubLine span{font-size:11px;padding:5px 8px}
+      .consultantCard{border-width:2px;border-radius:18px}
+      .consultantCard .title{font-size:17px}
+      .consultantMeta{font-size:12px}
+      .heroBottom{display:grid;grid-template-columns:1fr 1fr}
+      .metric{padding:12px}
+      .metric b{font-size:20px}
+      .metric span{font-size:11px}
+      .section{margin:16px 0;padding:14px;border-radius:18px;box-shadow:0 8px 20px rgba(14,44,113,.08)}
+      .sectionTitle{margin:-14px -14px 14px;padding:14px;gap:4px}
+      .sectionTitle h2{font-size:22px}
+      .sectionTitle p{font-size:12px;line-height:1.55}
+      .tabs{position:static;display:grid;grid-template-columns:repeat(3,1fr);gap:7px;padding:0;border:0;background:transparent}
+      .tab{font-size:12px;padding:10px 6px;border-radius:12px}
+      .dayHeader{padding:13px;border-radius:16px}
+      .dayHeader h3{font-size:24px}
+      .timeline{padding-left:8px}
+      .timeline:before{left:3px}
+      .event{grid-template-columns:1fr;gap:8px;margin-left:8px;padding:12px;border-radius:15px}
+      .event:before{left:-18px;top:20px;width:14px;height:14px}
+      .time{text-align:left;display:inline-block;width:max-content;font-size:13px;padding:6px 9px;border-radius:10px}
+      .event h4{font-size:16px;margin-bottom:4px}
+      .event p{font-size:13px;line-height:1.7}
+      .mapBtn,.miniBtn{min-height:38px}
+      .grid4,.grid3,.grid2,.contactGrid,.checklist{grid-template-columns:1fr!important;gap:10px}
+      .serviceCard,.shopCard,.contactCard{padding:14px;border-radius:16px}
+      .serviceCard h3,.shopCard h3,.contactCard h3{font-size:16px;line-height:1.35}
+      .shopCard:before{display:none}
+      .shopCard h3{padding-right:0}
+      .alertBox,.blueBox,.yellowBox{padding:12px;border-radius:14px;font-size:13px}
+      .contactActions{display:grid;grid-template-columns:1fr 1fr}
+      .contactInfo div{grid-template-columns:1fr}
+      .inlinePlace{font-size:12px}
+      .check{padding:12px;border-radius:14px}
+      .footer{margin-top:22px;padding:20px 0}
+    }
+
     @media print{
       body{background:#fff;color:#000}.siteHeader,.tabs,.quickBtns,.noticeRibbon,.mapBtn{display:none!important}.wrap{width:100%;margin:0}.heroPanel,.section{box-shadow:none;border:1px solid #bbb;break-inside:avoid}.day{display:block!important}.heroBlue{background:#fff;color:#000;border-bottom:1px solid #bbb}.consultantCard{border:1px solid #bbb;box-shadow:none}.timeline:before{background:#777}.footer{background:#fff;color:#000;border-top:1px solid #bbb}.footer p{color:#333}.shopCard,.event,.serviceCard{box-shadow:none;break-inside:avoid}a{color:#000;text-decoration:none}
     }
@@ -204,22 +262,23 @@
       </div>
       <nav class="quickBtns" aria-label="クイックリンク">
         <a href="#schedule">当日スケジュール</a>
-        <a href="#contacts">住所・電話</a>
-        <a href="#food">食事候補</a>
+        <a href="#summary">診断結果</a>
+        <a href="#food">昼食候補</a>
         <a href="#buy">買い出し</a>
-        <a href="#caution">注意事項</a>
+        <a href="#ero-advice">ドエロ助言</a>
+        <a href="#contacts">ナビ用</a>
+        <a href="#checklist">チェック</a>
         <button onclick="window.print()">印刷</button>
-        <a class="red" href="https://www.google.com/maps/dir/?api=1&origin=%E6%96%B0%E7%A5%9E%E6%88%B8%E9%A7%85&destination=%E6%96%B0%E6%A8%AA%E6%B5%9C%E9%A7%85" target="_blank" rel="noreferrer">旅ルート</a>
       </nav>
     </div>
     <nav class="mainNav" aria-label="ノジマ風メニュー">
       <div class="wrap">
-        <a href="#summary">店舗情報</a>
-        <a href="#contacts">店舗一覧</a>
-        <a href="#schedule">サービス</a>
-        <a href="#food">キャンペーン</a>
-        <a href="#caution">お客様サポート</a>
-        <a href="#checklist">モバイル会員</a>
+        <a href="#schedule">当日スケジュール</a>
+        <a href="#summary">旅の診断結果</a>
+        <a href="#food">昼食候補</a>
+        <a href="#buy">BBQ買い出し</a>
+        <a href="#ero-advice">ドエロ助言</a>
+        <a href="#contacts">ナビ用</a>
       </div>
     </nav>
   </header>
@@ -260,44 +319,6 @@
           <div class="metric"><b>13:00</b><span>7/7 レンタカー返却はタイト</span></div>
         </div>
       </div>
-    </section>
-
-    <section class="section" id="summary">
-      <div class="sectionTitle">
-        <h2>旅の診断結果</h2>
-        <p>ノジマの店舗案内風に、スケジュールの危険度を表示</p>
-      </div>
-      <div class="grid4">
-        <article class="serviceCard red"><div class="bigStatus">△</div><h3>7/5 昼〜レンタカー</h3><p>新神戸到着から13:00レンタカーまで短め。昼食は三宮寄せ・即入店できる店が安全。</p></article>
-        <article class="serviceCard orange"><div class="bigStatus">△</div><h3>7/5 うずしお</h3><p>13:20までに三宮を出たい。乗船手続きがあるので、15:00現地着が目標。</p></article>
-        <article class="serviceCard"><div class="bigStatus">○</div><h3>7/6 ドラクエ</h3><p>13:00〜16:00はメイン中心ならOK。サブクエストや売店を楽しむなら後ろ倒し推奨。</p></article>
-        <article class="serviceCard red"><div class="bigStatus">△</div><h3>7/7 昼食〜返却</h3><p>11:30昼食開始だと13:00返却が危険。明石焼きは10:30〜11:30に前倒し推奨。</p></article>
-      </div>
-      <div class="alertBox"><strong>最重要：</strong>7/7は「10:30明石焼き → 11:45三宮方面へ出発 → 13:00返却」が安全ルート。11:30から昼食だと、待ち時間・駐車場・返却手続きで詰みやすいです。</div>
-    </section>
-
-
-    <section class="section" id="contacts">
-      <div class="sectionTitle">
-        <h2>ナビ用 住所・電話一覧</h2>
-        <p>迷ったらここから地図・電話。邪魔にならない一覧版。</p>
-      </div>
-      <div class="blueBox"><strong>使い方：</strong>スマホなら「TEL」でそのまま電話、「地図」でGoogle Mapsを開けます。駐車場や営業時間は当日朝に再確認してください。</div>
-      <div class="contactGrid">
-        <article class="contactCard"><span class="contactTag">7/5・7/7｜レンタカー</span><h3>日産レンタカー 神戸三宮中央店</h3><div class="contactInfo"><div><b>住所</b><span>〒651-0087 兵庫県神戸市中央区御幸通5-2-21</span></div><div><b>TEL</b><span>078-232-1023</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E6%97%A5%E7%94%A3%E3%83%AC%E3%83%B3%E3%82%BF%E3%82%AB%E3%83%BC%20%E7%A5%9E%E6%88%B8%E4%B8%89%E5%AE%AE%E4%B8%AD%E5%A4%AE%E5%BA%97" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:0782321023">TEL</a></div></article>
-        <article class="contactCard"><span class="contactTag">7/5｜乗船</span><h3>うずしおクルーズ</h3><div class="contactInfo"><div><b>住所</b><span>〒656-0501 兵庫県南あわじ市福良港 うずしおドームなないろ館</span></div><div><b>TEL</b><span>0799-52-0054</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E3%81%86%E3%81%9A%E3%81%97%E3%81%8A%E3%82%AF%E3%83%AB%E3%83%BC%E3%82%BA" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:0799520054">TEL</a></div></article>
-        <article class="contactCard"><span class="contactTag">7/5｜買い出し</span><h3>マルナカ 淡路一宮店</h3><div class="contactInfo"><div><b>住所</b><span>〒656-1511 兵庫県淡路市郡家140</span></div><div><b>TEL</b><span>0799-85-1777</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9E%E3%83%AB%E3%83%8A%E3%82%AB%20%E6%B7%A1%E8%B7%AF%E4%B8%80%E5%AE%AE%E5%BA%97" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:0799851777">TEL</a></div></article>
-        <article class="contactCard"><span class="contactTag">7/5｜宿</span><h3>BLUE OCEAN 淡路屋</h3><div class="contactInfo"><div><b>住所</b><span>〒656-1501 兵庫県淡路市尾崎634-5</span></div><div><b>TEL</b><span>090-6941-0015</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=BLUE%20OCEAN%20%E6%B7%A1%E8%B7%AF%E5%B1%8B" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:09069410015">TEL</a></div></article>
-        <article class="contactCard"><span class="contactTag">7/6｜昼候補</span><h3>カフェ・スコーラ／のじまスコーラ</h3><div class="contactInfo"><div><b>住所</b><span>〒656-1721 兵庫県淡路市野島蟇浦843</span></div><div><b>TEL</b><span>050-3816-1805</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E3%82%AB%E3%83%95%E3%82%A7%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%A9%20%E3%81%AE%E3%81%98%E3%81%BE%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%A9" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:05038161805">TEL</a></div></article>
-        <article class="contactCard"><span class="contactTag">7/6｜目的地</span><h3>ニジゲンノモリ／ドラクエアイランド</h3><div class="contactInfo"><div><b>住所</b><span>〒656-2301 兵庫県淡路市楠本2425-2（F駐車場目安）</span></div><div><b>TEL</b><span>0799-64-7061</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:0799647061">TEL</a></div></article>
-        <article class="contactCard"><span class="contactTag">7/6｜宿</span><h3>料亭旅館 人丸花壇</h3><div class="contactInfo"><div><b>住所</b><span>〒673-0875 兵庫県明石市大蔵天神町21-22</span></div><div><b>TEL</b><span>078-912-1717</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E6%96%99%E4%BA%AD%E6%97%85%E9%A4%A8%20%E4%BA%BA%E4%B8%B8%E8%8A%B1%E5%A3%87" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:0789121717">TEL</a></div></article>
-        <article class="contactCard"><span class="contactTag">7/6 夜｜夕食候補</span><h3>魚食菜 ひらじぃ</h3><div class="contactInfo"><div><b>住所</b><span>〒673-0892 兵庫県明石市本町1-5-19</span></div><div><b>TEL</b><span>078-939-2477</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E9%AD%9A%E9%A3%9F%E8%8F%9C%20%E3%81%B2%E3%82%89%E3%81%98%E3%81%83" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:0789392477">TEL</a></div></article>
-        <article class="contactCard"><span class="contactTag">7/6 夜｜夕食候補</span><h3>あかし亭 魚の棚店</h3><div class="contactInfo"><div><b>住所</b><span>〒673-0892 兵庫県明石市本町1-5-18</span></div><div><b>TEL</b><span>078-995-8336</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E3%81%82%E3%81%8B%E3%81%97%E4%BA%AD%20%E9%AD%9A%E3%81%AE%E6%A3%9A%E5%BA%97" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:0789958336">TEL</a></div></article>
-        <article class="contactCard"><span class="contactTag">7/7 昼｜明石焼き</span><h3>たこ磯</h3><div class="contactInfo"><div><b>住所</b><span>〒673-0892 兵庫県明石市本町1丁目1-11</span></div><div><b>TEL</b><span>078-914-5103</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E3%81%9F%E3%81%93%E7%A3%AF%20%E6%98%8E%E7%9F%B3" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:0789145103">TEL</a></div></article>
-        <article class="contactCard"><span class="contactTag">7/7 昼｜明石焼き</span><h3>ふなまち</h3><div class="contactInfo"><div><b>住所</b><span>〒673-0893 兵庫県明石市材木町5-12</span></div><div><b>TEL</b><span>078-912-3508</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E3%81%B5%E3%81%AA%E3%81%BE%E3%81%A1%20%E6%98%8E%E7%9F%B3" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:0789123508">TEL</a></div></article>
-        <article class="contactCard"><span class="contactTag">7/7｜お土産</span><h3>アントレマルシェ 新神戸店</h3><div class="contactInfo"><div><b>住所</b><span>〒650-0001 兵庫県神戸市中央区加納町1丁目3-1</span></div><div><b>TEL</b><span>078-262-6425</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E3%82%A2%E3%83%B3%E3%83%88%E3%83%AC%E3%83%9E%E3%83%AB%E3%82%B7%E3%82%A7%20%E6%96%B0%E7%A5%9E%E6%88%B8" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:0782626425">TEL</a></div></article>
-      </div>
-      <p class="contactNote">※電話番号・営業時間は変更される可能性があります。予約済み施設は予約メール・予約画面の連絡先を最優先してください。</p>
     </section>
 
     <section class="section" id="schedule">
@@ -354,6 +375,20 @@
       </article>
     </section>
 
+    <section class="section" id="summary">
+      <div class="sectionTitle">
+        <h2>旅の診断結果</h2>
+        <p>ノジマの店舗案内風に、スケジュールの危険度を表示</p>
+      </div>
+      <div class="grid4">
+        <article class="serviceCard red"><div class="bigStatus">△</div><h3>7/5 昼〜レンタカー</h3><p>新神戸到着から13:00レンタカーまで短め。昼食は三宮寄せ・即入店できる店が安全。</p></article>
+        <article class="serviceCard orange"><div class="bigStatus">△</div><h3>7/5 うずしお</h3><p>13:20までに三宮を出たい。乗船手続きがあるので、15:00現地着が目標。</p></article>
+        <article class="serviceCard"><div class="bigStatus">○</div><h3>7/6 ドラクエ</h3><p>13:00〜16:00はメイン中心ならOK。サブクエストや売店を楽しむなら後ろ倒し推奨。</p></article>
+        <article class="serviceCard red"><div class="bigStatus">△</div><h3>7/7 昼食〜返却</h3><p>11:30昼食開始だと13:00返却が危険。明石焼きは10:30〜11:30に前倒し推奨。</p></article>
+      </div>
+      <div class="alertBox"><strong>最重要：</strong>7/7は「10:30明石焼き → 11:45三宮方面へ出発 → 13:00返却」が安全ルート。11:30から昼食だと、待ち時間・駐車場・返却手続きで詰みやすいです。</div>
+    </section>
+
     <section class="section" id="food">
       <div class="sectionTitle">
         <h2>昼食・夕食候補</h2>
@@ -383,12 +418,68 @@
         <h2>BBQ買い出しサービス</h2>
         <p>7/5夜・7/6朝まで考えて買う</p>
       </div>
-      <div class="grid3">
-        <article class="shopCard buy"><span class="sub">最有力</span><h3>マルナカ 淡路一宮店</h3><p>BLUE OCEAN淡路屋方面の買い出し本命。食材・飲料・氷・朝食までまとめ買い。</p><div class="inlinePlace"><b>住所</b> 淡路市郡家140<br><b>TEL</b> 0799-85-1777</div><ul><li>肉・野菜・海鮮・焼きそば</li><li>酒・ソフトドリンク・水</li><li>氷・紙皿・割り箸・調味料</li></ul><a class="mapBtn" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9E%E3%83%AB%E3%83%8A%E3%82%AB%20%E6%B7%A1%E8%B7%AF%E4%B8%80%E5%AE%AE%E5%BA%97" target="_blank" rel="noreferrer">地図</a></article>
-        <article class="shopCard buy"><span class="sub">補欠</span><h3>マイマート 北淡IC店</h3><p>閉店時間が早めの可能性があるので、使うなら早め。19時買い出しには不向き。</p><ul><li>時間が合えば補欠</li><li>高速IC寄りの導線確認</li><li>営業時間は要確認</li></ul><a class="mapBtn blue" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9E%E3%82%A4%E3%83%9E%E3%83%BC%E3%83%88%20%E5%8C%97%E6%B7%A1IC%E5%BA%97" target="_blank" rel="noreferrer">地図</a></article>
-        <article class="shopCard buy"><span class="sub">コンビニ</span><h3>近隣コンビニ</h3><p>氷・追加ドリンク・花火以外の小物・翌朝の飲み物など。スーパー閉店後の保険。</p><ul><li>朝食追加</li><li>酔い止め・胃薬</li><li>モバイル充電系</li></ul><a class="mapBtn blue" href="https://www.google.com/maps/search/?api=1&query=BLUE%20OCEAN%20%E6%B7%A1%E8%B7%AF%E5%B1%8B%20%E8%BF%91%E3%81%8F%20%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8B" target="_blank" rel="noreferrer">近くを探す</a></article>
+      <div class="grid2">
+        <div class="shopCard buy">
+          <span class="sub">BBQ買い出しはここだけでOK</span>
+          <h3>マルナカ淡路一宮店</h3>
+          <ul>
+            <li>7/5のBBQ食材・飲料・氷・紙皿・調味料をまとめて回収</li>
+            <li>BLUE OCEAN淡路屋へ向かう前に寄ると動線がきれい</li>
+            <li>買い出し先はマルナカだけでOK。寄り道を増やさない</li>
+          </ul>
+          <div class="inlinePlace"><b>住所</b> 兵庫県淡路市郡家140<br><b>TEL</b> 0799-85-1777</div>
+          <div class="contactActions">
+            <a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9E%E3%83%AB%E3%83%8A%E3%82%AB%E6%B7%A1%E8%B7%AF%E4%B8%80%E5%AE%AE%E5%BA%97" target="_blank" rel="noreferrer">Google Maps</a>
+            <a class="miniBtn call" href="tel:0799851777">電話</a>
+          </div>
+        </div>
+        <div class="blueBox">
+          <strong>買うものメモ：</strong><br>
+          肉・海鮮・野菜・焼きそば・飲料・氷・紙皿・割り箸・トング・キッチンペーパー・ゴミ袋・調味料・虫よけ・翌朝の水分。
+        </div>
       </div>
-      <div class="blueBox"><strong>買い出しチェック：</strong>BBQ食材だけでなく、7/6朝食、飲み物、氷、調味料、紙皿、割り箸、ウェットティッシュ、ゴミ袋、虫よけ、日焼け止めをまとめて買うと楽です。</div>
+    </section>
+
+    <section class="section" id="ero-advice">
+      <div class="sectionTitle">
+        <h2>杉本イキスギ店長補佐代理からドエロアドバイス！</h2>
+        <p>※身内ノリのタイトルです。中身はちゃんと実用です。</p>
+      </div>
+      <div class="grid3">
+        <div class="serviceCard red">
+          <div class="bigStatus">余裕が一番エロい</div>
+          <h3>7/5は昼食を攻めすぎない</h3>
+          <p>13:00レンタカー、15:00福良港着があるので、神戸ランチは「早い・近い・並ばない」を最優先。満腹よりも時間の余裕を取りましょう。</p>
+        </div>
+        <div class="serviceCard">
+          <div class="bigStatus">BBQは段取り命</div>
+          <h3>買い出しはマルナカ一本化</h3>
+          <p>寄り道を増やすと到着後の準備が崩れます。肉・海鮮・飲料・氷・紙皿・調味料を一気に回収して、宿でゆっくり焼くのが正解です。</p>
+        </div>
+        <div class="serviceCard orange">
+          <div class="bigStatus">帰りは守備的に</div>
+          <h3>7/7は明石焼き早昼</h3>
+          <p>11:30昼食開始だと13:00返却がきついです。10:30〜11:30で食べて、12時前には三宮方面へ動くのが大人の立ち回りです。</p>
+        </div>
+      </div>
+      <div class="yellowBox">
+        <strong>杉本メモ：</strong>旅の満足度は「予定を全部こなす」より「焦らず笑える余白」で決まります。詰まりそうなら、観光よりレンタカー返却と新幹線を優先してください。
+      </div>
+    </section>
+
+
+    <section class="section" id="summary-after-advice">
+      <div class="sectionTitle">
+        <h2>旅の診断結果・おかわり</h2>
+        <p>ノジマの店舗案内風に、スケジュールの危険度を表示</p>
+      </div>
+      <div class="grid4">
+        <article class="serviceCard red"><div class="bigStatus">△</div><h3>7/5 昼〜レンタカー</h3><p>新神戸到着から13:00レンタカーまで短め。昼食は三宮寄せ・即入店できる店が安全。</p></article>
+        <article class="serviceCard orange"><div class="bigStatus">△</div><h3>7/5 うずしお</h3><p>13:20までに三宮を出たい。乗船手続きがあるので、15:00現地着が目標。</p></article>
+        <article class="serviceCard"><div class="bigStatus">○</div><h3>7/6 ドラクエ</h3><p>13:00〜16:00はメイン中心ならOK。サブクエストや売店を楽しむなら後ろ倒し推奨。</p></article>
+        <article class="serviceCard red"><div class="bigStatus">△</div><h3>7/7 昼食〜返却</h3><p>11:30昼食開始だと13:00返却が危険。明石焼きは10:30〜11:30に前倒し推奨。</p></article>
+      </div>
+      <div class="alertBox"><strong>最重要：</strong>7/7は「10:30明石焼き → 11:45三宮方面へ出発 → 13:00返却」が安全ルート。11:30から昼食だと、待ち時間・駐車場・返却手続きで詰みやすいです。</div>
     </section>
 
     <section class="section" id="caution">
@@ -404,6 +495,29 @@
         <div class="blueBox"><strong>宿：</strong>BLUE OCEAN淡路屋はBBQ後の片付け、人丸花壇は翌朝10:00チェックアウトを意識。</div>
         <div class="blueBox"><strong>天候：</strong>釣り・クルーズ・ドラクエ屋外移動は天気で満足度が変わる。前日夜と当日朝に天気確認。</div>
       </div>
+    </section>
+
+    <section class="section" id="contacts">
+      <div class="sectionTitle">
+        <h2>ナビ用 住所・電話一覧</h2>
+        <p>迷ったらここから地図・電話。邪魔にならない一覧版。</p>
+      </div>
+      <div class="blueBox"><strong>使い方：</strong>スマホなら「TEL」でそのまま電話、「地図」でGoogle Mapsを開けます。駐車場や営業時間は当日朝に再確認してください。</div>
+      <div class="contactGrid">
+        <article class="contactCard"><span class="contactTag">7/5・7/7｜レンタカー</span><h3>日産レンタカー 神戸三宮中央店</h3><div class="contactInfo"><div><b>住所</b><span>〒651-0087 兵庫県神戸市中央区御幸通5-2-21</span></div><div><b>TEL</b><span>078-232-1023</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E6%97%A5%E7%94%A3%E3%83%AC%E3%83%B3%E3%82%BF%E3%82%AB%E3%83%BC%20%E7%A5%9E%E6%88%B8%E4%B8%89%E5%AE%AE%E4%B8%AD%E5%A4%AE%E5%BA%97" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:0782321023">TEL</a></div></article>
+        <article class="contactCard"><span class="contactTag">7/5｜乗船</span><h3>うずしおクルーズ</h3><div class="contactInfo"><div><b>住所</b><span>〒656-0501 兵庫県南あわじ市福良港 うずしおドームなないろ館</span></div><div><b>TEL</b><span>0799-52-0054</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E3%81%86%E3%81%9A%E3%81%97%E3%81%8A%E3%82%AF%E3%83%AB%E3%83%BC%E3%82%BA" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:0799520054">TEL</a></div></article>
+        <article class="contactCard"><span class="contactTag">7/5｜買い出し</span><h3>マルナカ 淡路一宮店</h3><div class="contactInfo"><div><b>住所</b><span>〒656-1511 兵庫県淡路市郡家140</span></div><div><b>TEL</b><span>0799-85-1777</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9E%E3%83%AB%E3%83%8A%E3%82%AB%20%E6%B7%A1%E8%B7%AF%E4%B8%80%E5%AE%AE%E5%BA%97" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:0799851777">TEL</a></div></article>
+        <article class="contactCard"><span class="contactTag">7/5｜宿</span><h3>BLUE OCEAN 淡路屋</h3><div class="contactInfo"><div><b>住所</b><span>〒656-1501 兵庫県淡路市尾崎634-5</span></div><div><b>TEL</b><span>090-6941-0015</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=BLUE%20OCEAN%20%E6%B7%A1%E8%B7%AF%E5%B1%8B" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:09069410015">TEL</a></div></article>
+        <article class="contactCard"><span class="contactTag">7/6｜昼候補</span><h3>カフェ・スコーラ／のじまスコーラ</h3><div class="contactInfo"><div><b>住所</b><span>〒656-1721 兵庫県淡路市野島蟇浦843</span></div><div><b>TEL</b><span>050-3816-1805</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E3%82%AB%E3%83%95%E3%82%A7%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%A9%20%E3%81%AE%E3%81%98%E3%81%BE%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%A9" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:05038161805">TEL</a></div></article>
+        <article class="contactCard"><span class="contactTag">7/6｜目的地</span><h3>ニジゲンノモリ／ドラクエアイランド</h3><div class="contactInfo"><div><b>住所</b><span>〒656-2301 兵庫県淡路市楠本2425-2（F駐車場目安）</span></div><div><b>TEL</b><span>0799-64-7061</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:0799647061">TEL</a></div></article>
+        <article class="contactCard"><span class="contactTag">7/6｜宿</span><h3>料亭旅館 人丸花壇</h3><div class="contactInfo"><div><b>住所</b><span>〒673-0875 兵庫県明石市大蔵天神町21-22</span></div><div><b>TEL</b><span>078-912-1717</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E6%96%99%E4%BA%AD%E6%97%85%E9%A4%A8%20%E4%BA%BA%E4%B8%B8%E8%8A%B1%E5%A3%87" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:0789121717">TEL</a></div></article>
+        <article class="contactCard"><span class="contactTag">7/6 夜｜夕食候補</span><h3>魚食菜 ひらじぃ</h3><div class="contactInfo"><div><b>住所</b><span>〒673-0892 兵庫県明石市本町1-5-19</span></div><div><b>TEL</b><span>078-939-2477</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E9%AD%9A%E9%A3%9F%E8%8F%9C%20%E3%81%B2%E3%82%89%E3%81%98%E3%81%83" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:0789392477">TEL</a></div></article>
+        <article class="contactCard"><span class="contactTag">7/6 夜｜夕食候補</span><h3>あかし亭 魚の棚店</h3><div class="contactInfo"><div><b>住所</b><span>〒673-0892 兵庫県明石市本町1-5-18</span></div><div><b>TEL</b><span>078-995-8336</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E3%81%82%E3%81%8B%E3%81%97%E4%BA%AD%20%E9%AD%9A%E3%81%AE%E6%A3%9A%E5%BA%97" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:0789958336">TEL</a></div></article>
+        <article class="contactCard"><span class="contactTag">7/7 昼｜明石焼き</span><h3>たこ磯</h3><div class="contactInfo"><div><b>住所</b><span>〒673-0892 兵庫県明石市本町1丁目1-11</span></div><div><b>TEL</b><span>078-914-5103</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E3%81%9F%E3%81%93%E7%A3%AF%20%E6%98%8E%E7%9F%B3" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:0789145103">TEL</a></div></article>
+        <article class="contactCard"><span class="contactTag">7/7 昼｜明石焼き</span><h3>ふなまち</h3><div class="contactInfo"><div><b>住所</b><span>〒673-0893 兵庫県明石市材木町5-12</span></div><div><b>TEL</b><span>078-912-3508</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E3%81%B5%E3%81%AA%E3%81%BE%E3%81%A1%20%E6%98%8E%E7%9F%B3" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:0789123508">TEL</a></div></article>
+        <article class="contactCard"><span class="contactTag">7/7｜お土産</span><h3>アントレマルシェ 新神戸店</h3><div class="contactInfo"><div><b>住所</b><span>〒650-0001 兵庫県神戸市中央区加納町1丁目3-1</span></div><div><b>TEL</b><span>078-262-6425</span></div></div><div class="contactActions"><a class="miniBtn map" href="https://www.google.com/maps/search/?api=1&query=%E3%82%A2%E3%83%B3%E3%83%88%E3%83%AC%E3%83%9E%E3%83%AB%E3%82%B7%E3%82%A7%20%E6%96%B0%E7%A5%9E%E6%88%B8" target="_blank" rel="noreferrer">地図</a><a class="miniBtn call" href="tel:0782626425">TEL</a></div></article>
+      </div>
+      <p class="contactNote">※電話番号・営業時間は変更される可能性があります。予約済み施設は予約メール・予約画面の連絡先を最優先してください。</p>
     </section>
 
     <section class="section" id="checklist">
